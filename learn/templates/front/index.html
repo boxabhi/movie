@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>Code</span> for everyone.</h2>
+								<p>
+									Programs must be written for people to read, and only incidentally for machines to execute
+									</p>
+
+									<a href="/courses" class="site-btn"> Courses</a>
+								
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="{% static 'back/five.svg' %}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>Learn  </span> how to code.</h2>
+								<p>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live</p>
+								
+								<a href="/courses" class="site-btn">Courses</a>
+								
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="{% static 'back/four.svg' %}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+	<section class="concept-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>Courses we Offer</h2>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<p>Learn Skill.tech is a place where you will learn all the top notch technologies for your tech career.</p>
+						
+						</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/Js.png' %}" alt="">
+						<h5>JavaScript</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/Java.png' %}" alt="">
+						<h5>Java</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/C.png' %}" alt="">
+						<h5>C++</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/Flask.png' %}" alt="">
+						<h5>Flask</h5>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/laravel.png' %}" alt="">
+						<h5>Lavarel</h5>
+					</div>
+				</div>
+
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/Django.png' %}" alt="">
+						<h5>Django</h5>
+					</div>
+				</div>
+
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/node.png' %}" alt="">
+						<h5>Node Js</h5>
+					</div>
+				</div>
+
+
+				
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{% static 'language/python.png' %}" alt="">
+						<h5>Python</h5>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- How section -->
+	<section class="how-section spad set-bg" data-setbg="img/how-to-bg.jpg">
+		<div class="container text-white">
+			<div class="section-title">
+				<h2>How it works</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="{% static 'language/account.png' %}" alt="">
+						</div>
+						<h4>Create an account</h4>
+						</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="{% static 'language/Certificate.png' %}" alt="">
+						</div>
+						<h4>Choose a Course</h4>
+							</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="{% static 'language/Learning.png' %}" alt="">
+						</div>
+						<h4>Start Learning</h4>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- How section end -->
+
+
+	<section class="category-section spad">
+		<div class="container">
+			<div class="section-title">
+				<h2>Courses</h2>
+			</div>
+			<div class="container">
+				<div class="category-links">
+					<a href="" class="active">Programming</a>
+					<a href="">Development</a>
+					<a href="">Data Science</a>
+					<a href="">Data Structures</a>
+				</div>
+			</div>
+
+			
+			<div class="category-items">
+				<div class="row">
+	
+					{% for course in courses %}
+					
+					<div class="col-md-4 shadow-lg   bg-white rounded">
+						<div class="category-item">
+							<img src="static/{{course.image}}" style="width: 100%;"  class="img-fluid img-responsive"  alt="{{course.slug}}">
+							
+							<a href="course/{{course.slug}}" class="ci-link"><i class="fa fa-play"></i></a>
+						</div>
+						<div class="ci-text p-4">
+							
+						<h4 class="text-primary">{{course.course_name}}</h4>
+						
+						</div>
+					</div>
+				   {% endfor %}
+				 
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

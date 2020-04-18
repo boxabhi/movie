@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static  %}
+{% block content %}
+
+<!-- Category section -->
+<section class="category-section spad">
+    <div class="container">
+        <div class="section-title">
+            <h2>Courses</h2>
+        </div>
+        <div class="container">
+            <div class="category-links">
+                <a href="" class="active">Programming</a>
+                <a href="">Development</a>
+                <a href="">Data Science</a>
+                <a href="">Data Structures</a>
+            </div>
+        </div>
+        <div class="category-items">
+            <div class="row">
+
+                {% for course in courses %}
+                <div class="col-md-4">
+                    <div class="category-item">
+                        <img src="../../static/courses/{{course.image}}"  alt="">
+                        <div class="ci-text">
+                            <h4>{{course.course_name}}</h4>
+                            <p>{{course.detail}}</p>
+                        </div>
+                        <a href="course/{{course.slug}}" class="ci-link"><i class="fa fa-play"></i></a>
+                    </div>
+                </div>
+               {% endfor %}
+             
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Category section end -->
+
+
+
+
+{% endblock %}

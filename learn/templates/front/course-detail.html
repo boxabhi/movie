@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static  %}
+{% block content %}
+
+
+	<!-- Player section -->
+	<section class="player-section set-bg" data-setbg="../../static/back/two.jpg">
+		<div class="player-box">
+			<div class="tarck-thumb-warp">
+				<div class="tarck-thumb">
+                   
+					<img src="static/{{course.image}}" style="width: 100%;"  class="img-fluid img-responsive"  alt="{{course.slug}}">
+							
+				</div>
+			</div>
+			<div class="wave-player-warp">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="wave-player-info">
+							<h2 class="text-uppercase h5">The Ultimate <span class="font-weight-bold text-primary">{{course.course_name}}</span> Course</h2>
+							<p>Ace the competitive programming by learning STL.</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+                        <h4 class="m-2"><s class="badge badge-primary">599/</s> 399/- only</h4>
+						<button class="site-btn mt-2">Buy</button>
+					</div>
+				</div>
+				<div id="wavePlayer" class="clierfix">
+					
+				
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Player section end -->
+
+    
+    <section class="subscription-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="sub-text">
+						<h3 class="h4">Buy the <b>{{course.course_name}}</b> course and Learn the skill.</h3>
+						
+						<p>{{course.details}}</p>
+                    
+                        <a href="" class="site-btn">Buy now</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<ul class="sub-list">
+                         
+						<li><img src="{% static 'img/icons/check-icon.png' %}" alt="">INTERMEDIATE</li>
+						<li><img src="{% static 'img/icons/check-icon.png' %}" alt="">LIFETIME ACCESS</li>
+						<li><img src="{% static 'img/icons/check-icon.png' %}" alt="">CERTIFICATE</li>
+				
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+{% endblock %}

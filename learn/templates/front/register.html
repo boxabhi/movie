@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row mx-auto">
+            <div class="col-lg-12 p-0">
+                <div class="contact-warp">
+                    <div class="section-title mb-2">
+                        <h2>Register</h2>
+                    </div>
+                    <form class="contact-from mt-3" method="POST">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                                <input type="text" name="email" placeholder="Your Email">
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="number" name="mobile" placeholder="Mobile">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="password" placeholder="Password">
+                            </div>
+                            <div class="col-md-6">
+                            <button type="submit" class="site-btn">Register</button>
+                            </div>
+                        
+                    </form>
+                
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</section>
+
+{% endblock %}
