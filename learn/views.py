@@ -80,7 +80,7 @@ def payments(request,slug):
             source="tok_visa",description=course.course_name,
             receipt_email ="abhijeetg40@gmail.com"
             )
-        return redirect(success)
+        return redirect(paysuccess)
     
     return render(request,'front/payment.html', {'course':course})
 
