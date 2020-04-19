@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from django.contrib.auth import authenticate
-
+import stripe
 
 def index(request):
     courses = Course.objects.all()
@@ -66,3 +66,23 @@ def verification(request,slug):
         return render(request , 'front/verification.html',{'user' : user.email})
     else:
         return render(request , 'custom/404.html')
+
+
+def payments(request,slug):
+    course = Course.objects.get(slug=slug)
+    stripe.api_key = "sk_test_qu7ivgHp9WRHlHJjs2QHugIA00hKFbC5qc"
+    if request.method == 'POST':
+        id = request.POST['course_id']
+        price = Course.objects.get(id = id)
+        print(price.price)
+        stripe.Charge.create(
+            amount=(price.price),currency="INR",
+            source="tok_visa",description=course.course_name,
+            receipt_email ="abhijeetg40@gmail.com"
+            )
+        return redirect(success)
+    
+    return render(request,'front/payment.html', {'course':course})
+
+def paysuccess(request):
+    return render(request,'front/success.html', )

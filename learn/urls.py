@@ -7,6 +7,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
+    
     path('', index , name="index" ),
     path('courses' , courses , name="courses"),
     path('course/<slug>', course_detail , name="course-detail"),
@@ -14,8 +15,9 @@ urlpatterns = [
     path('register' , register ,name="register"),
     path('sucess',mail , name="success"),
     path('verification/<slug>', verification , name="verification"),
+    path('payment/<slug>', payments , name="payment"),
+    path('payment-sucess', paysuccess,name="success")
     
-  
 ]
 
 

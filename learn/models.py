@@ -3,8 +3,9 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
 # Create your models here.
 from django.template.defaultfilters import slugify
+
+
 class CustomUserManager(BaseUserManager):
-    
     def create_user(self,email,password,v_token,verify,mobile,address):
         if not email:
             raise ValueError(_('The Email must be set'))
@@ -40,9 +41,6 @@ class Profile(AbstractUser):
     verify = models.BooleanField(default=False)
     mobile = models.CharField(max_length=15)
     address = models.CharField(max_length=4000 ,blank=True)
-    # is_admin = models.BooleanField(default=False)
-    # is_staff = models.BooleanField(default=False)
-    # is_active = models.BooleanField(default=True)
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = [ 'v_token','address','verify','mobile']
@@ -51,12 +49,6 @@ class Profile(AbstractUser):
     def __str__(self):
         return self.email
 
-
-
-    
-    
-  
-    
 
 
 class Course(models.Model):
@@ -84,4 +76,5 @@ class Module(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     def __str__(self):
         return self.topic
+    
     

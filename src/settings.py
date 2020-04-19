@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'oogzmhrmw5lc)ku4e-$k#59v#@k6f&1a-xss6=%3r_aylr1zut'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TEMPLATE_DEBUG = False 
+DEBUG = TEMPLATE_DEBUG = True 
 
 ALLOWED_HOSTS = ['*']
+
+STRIPE_SECRET_KEY = 'sk_test_qu7ivgHp9WRHlHJjs2QHugIA00hKFbC5qc'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_tI68XHn4booBNFoJfdg6D0l300xpqKUGfw'
 
 
 # Application definition
