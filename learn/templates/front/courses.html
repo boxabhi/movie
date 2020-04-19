@@ -3,8 +3,7 @@
 {% load static  %}
 {% block content %}
 
-<!-- Category section -->
-<section class="category-section spad">
+<section class="category-section">
     <div class="container">
         <div class="section-title">
             <h2>Courses</h2>
@@ -17,27 +16,32 @@
                 <a href="">Data Structures</a>
             </div>
         </div>
-        <div class="category-items">
-            <div class="row">
+    </div>
 
-                {% for course in courses %}
-                <div class="col-md-4">
-                    <div class="category-item">
-                        <img src="../../static/courses/{{course.image}}"  alt="">
-                        <div class="ci-text">
-                            <h4>{{course.course_name}}</h4>
-                            <p>{{course.detail}}</p>
-                        </div>
-                        <a href="course/{{course.slug}}" class="ci-link"><i class="fa fa-play"></i></a>
+    
+<section class="blogs-area  mb-5 ">
+    <div class="container">
+        <div class="row">
+            {% for course in courses %}
+            <div class="col-lg-4 col-md-6 mt-5 mb-5">
+                <div class="single-blogs mb-100">
+                    <div class="blog-img">
+                    <a href="course/{{course.slug}}"><img src="static/{{course.image}}" alt="" ></a>
+                    </div>
+                    <div class="blog-cap d-flex">
+                        <span class="color1 mt-3 mr-1">{{course.course_name}} </span><br>
+                        <a href="/buy" class="btn">499/-</a>
                     </div>
                 </div>
-               {% endfor %}
-             
             </div>
+            {% endfor %}			 
         </div>
     </div>
 </section>
-<!-- Category section end -->
+
+
+</section>
+
 
 
 

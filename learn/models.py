@@ -62,6 +62,7 @@ class Profile(AbstractUser):
 class Course(models.Model):
     course_name = models.CharField(max_length=1000)
     details = models.CharField(max_length=5000)
+    price = models.FloatField(default=0.0)
     image = models.ImageField(upload_to = "courses/" )
     slug = models.SlugField()
     syllabus = models.CharField(max_length=500)

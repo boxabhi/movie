@@ -9,7 +9,7 @@
 			<div class="tarck-thumb-warp">
 				<div class="tarck-thumb">
                    
-					<img src="static/{{course.image}}" style="width: 100%;"  class="img-fluid img-responsive"  alt="{{course.slug}}">
+					<img src="/static/{{course.image}}"  style="height: 220px;"  class="img-fluid img-responsive"  alt="{{course.slug}}">
 							
 				</div>
 			</div>
@@ -35,6 +35,63 @@
 	</section>
 	<!-- Player section end -->
 
+
+
+
+	<div class="our-pricing-area section-padding30 fix">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-md-6">
+					<div class="tab-content" id="nav-tabContent">
+						 <!-- First Tab -->
+						<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">  
+							<div class="single-pricing mb-30">
+								<div class="pricing-caption text-center">
+								<div class="procing-logo">
+
+										<img src="/static/{{course.image}}" alt="">
+								</div>
+									<span>₹ {{course.price}}</span>
+									<div class="pricing-listing">
+										<ul>
+											<li>Includes Certificate</li>
+											<li>Great Content</li>
+											<li>Life time access</li>
+											
+										</ul>
+									</div>
+									<a href="#" class="btn white-btn">Buy </a>
+								</div>
+								<!-- pricing Shape -->
+								<div class="pricing-shape">
+									<img class="pricing1" src="/static/img/procing-shape1.png" alt="">
+									<img class="pricing2"  src="/static/img/procing-shape2.png" alt="">
+								</div>
+							</div>
+						</div>
+						 <!-- Second Tab -->
+						
+					</div>
+				</div>
+				<!-- Pricing-caption -->
+				<div class="col-lg-6 col-md-6">
+					<!-- Section Tittle -->
+					<div class="section-tittle section-tittle3">
+						<span>The Ultimate </span>
+						<h2>{{course.course_name}}</h2>
+						<p class="pt-20 pb-40">
+						{{course.details}}	
+						</p>
+
+						<button class="site-btn mt-2">Buy</button>
+
+						</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+
     
     <section class="subscription-section spad">
 		<div class="container">
@@ -51,9 +108,9 @@
 				<div class="col-lg-6">
 					<ul class="sub-list">
                          
-						<li><img src="{% static 'img/icons/check-icon.png' %}" alt="">INTERMEDIATE</li>
-						<li><img src="{% static 'img/icons/check-icon.png' %}" alt="">LIFETIME ACCESS</li>
-						<li><img src="{% static 'img/icons/check-icon.png' %}" alt="">CERTIFICATE</li>
+						<li><img src="/static/img/icons/check-icon.png" alt="">INTERMEDIATE</li>
+						<li><img src="/static/img/icons/check-icon.png" alt="">LIFETIME ACCESS</li>
+						<li><img src="/static/img/icons/check-icon.png" alt="">CERTIFICATE</li>
 				
 					</ul>
 				</div>
