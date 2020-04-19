@@ -76,7 +76,7 @@ def payments(request,slug):
         price = Course.objects.get(id = id)
         print(price.price)
         stripe.Charge.create(
-            amount=(price.price),currency="INR",
+            amount=int(price.price),currency="INR",
             source="tok_visa",description=course.course_name,
             receipt_email ="abhijeetg40@gmail.com"
             )
