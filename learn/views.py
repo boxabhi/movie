@@ -7,6 +7,7 @@ from django.conf import settings
 
 from django.contrib.auth import authenticate
 import stripe
+from django.core.mail import send_mail
 
 def index(request):
     courses = Course.objects.all()
@@ -86,3 +87,35 @@ def payments(request,slug):
 
 def paysuccess(request):
     return render(request,'front/success.html', )
+
+
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.core.mail import EmailMessage
+import requests
+import json
+
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def send_email_students(request):
+    email = json.loads(request.body)
+    email = (json.dumps(email['email']))
+    html_message = render_to_string('email.html', {'context': 'values'})
+    plain_message = strip_tags(html_message)
+    phone              = '7985242482'
+    message            = 'You are invited for a Zoom session check you mail for more instructions.'
+   # url = "https://api.msg91.com/api/sendhttp.php?group_id=group_id&authkey=312965ArseXp9T5e1c6508P1&mobiles="+phone+"&country=91&message="+message+"&sender=CSSE&route=4";
+    #r = requests.get(url)
+   # print(r)
+    # send_mail('Very Important! You have been Invited for a zoom session!',
+    #           html_message
+    #               ,settings.EMAIL_HOST_USER,['abhijeetg40@gmail.com'] ,fail_silently=False,)
+    message = EmailMessage('💻💻💻VERY IMPORTANT! 💻💻💻 You have been Invited for a zoom session!', 
+                           html_message, settings.EMAIL_HOST_USER,[email] )
+    message.content_subtype = 'html' # this is required because there is no plain text email message
+    message.send()
+    return HttpResponse(json.dumps({'message': 'success'}))
+   
+        

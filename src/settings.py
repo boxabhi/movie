@@ -22,8 +22,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'oogzmhrmw5lc)ku4e-$k#59v#@k6f&1a-xss6=%3r_aylr1zut'
 
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'mail.citykonnect.com'
+EMAIL_HOST_USER = 'abhijeetgupta@citykonnect.com'
+EMAIL_HOST_PASSWORD = 'hello@abhi123'
+EMAIL_PORT = 465
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TEMPLATE_DEBUG = False 
+DEBUG = TEMPLATE_DEBUG = True 
 
 ALLOWED_HOSTS = ['*']
 

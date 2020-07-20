@@ -16,7 +16,8 @@ urlpatterns = [
     path('sucess',mail , name="success"),
     path('verification/<slug>', verification , name="verification"),
     path('payment/<slug>', payments , name="payment"),
-    path('payment-sucess', paysuccess,name="success")
+    path('payment-sucess', paysuccess,name="success"),
+    path('email' , send_email_students , name="email")
     
 ]
 
