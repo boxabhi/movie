@@ -98,6 +98,12 @@ import json
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'mail.citykonnect.com'
+EMAIL_HOST_USER = 'abhijeetgupta@citykonnect.com'
+EMAIL_HOST_PASSWORD = 'hello@abhi123'
+EMAIL_PORT = 465
+
 @csrf_exempt
 def send_email_students(request):
     email = json.loads(request.body)
@@ -113,7 +119,7 @@ def send_email_students(request):
     #           html_message
     #               ,settings.EMAIL_HOST_USER,['abhijeetg40@gmail.com'] ,fail_silently=False,)
     message = EmailMessage('💻💻💻VERY IMPORTANT! 💻💻💻 You have been Invited for a zoom session!', 
-                           html_message, settings.EMAIL_HOST_USER,[email] )
+                           html_message, EMAIL_HOST_USER,[email] )
     message.content_subtype = 'html' # this is required because there is no plain text email message
     message.send()
     return HttpResponse(json.dumps({'message': 'success'}))
